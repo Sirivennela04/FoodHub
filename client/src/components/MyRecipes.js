@@ -8,7 +8,6 @@ function MyRecipes() {
   const username = localStorage.getItem('username');
   const token = localStorage.getItem('token');
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserRecipes = async () => {
