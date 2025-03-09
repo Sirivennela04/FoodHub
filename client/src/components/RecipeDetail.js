@@ -16,7 +16,7 @@ function RecipeDetail() {
         setLoading(true);
         console.log("Fetching recipe details for ID:", id);
 
-        const response = await fetch(`http://localhost:3001/recipes/${id}`);
+        const response = await fetch(`https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/${id}`);
 
         if (!response.ok) {
           throw new Error("Recipe not found");
@@ -28,7 +28,7 @@ function RecipeDetail() {
 
         if (token) {
           console.log("Checking if recipe is saved...");
-          const savedResponse = await fetch("http://localhost:3001/recipes/saved", {
+          const savedResponse = await fetch("https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/saved", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -61,7 +61,7 @@ function RecipeDetail() {
 
     try {
       console.log(isSaved ? "Unsaving recipe..." : "Saving recipe...");
-      const response = await fetch(`http://localhost:3001/recipes/save/${id}`, {
+      const response = await fetch(`https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/save/${id}`, {
         method: isSaved ? "DELETE" : "POST",
         headers: {
           "Content-Type": "application/json",

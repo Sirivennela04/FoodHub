@@ -31,7 +31,7 @@ function CreateRecipe() {
         return;
       }
 
-      const response = await axios.post('http://localhost:3001/recipes', 
+      const response = await axios.post('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes', 
         {
           ...recipe,
           ingredients: recipe.ingredients.split(',').map(i => i.trim())

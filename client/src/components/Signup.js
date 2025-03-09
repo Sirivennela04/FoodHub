@@ -11,7 +11,7 @@ function Signup() {
     e.preventDefault();
     try {
       console.log('Attempting registration for:', username);
-      const response = await fetch('http://localhost:3001/auth/register', {
+      const response = await fetch('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
