@@ -9,12 +9,22 @@ dotenv.config();
 
 const app = express();
 
-const corsOptions = {
-  origin: 'https://food-hub-silk.vercel.app'
-};
-app.use(cors(corsOptions));
-
 app.use(express.json());
+
+app.use(cors({
+  origin: "https://food-hub-silk.vercel.app",
+  credentials: true,
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+}));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://food-hub-silk.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 app.use("/auth", userRouter);
 app.use("/recipes", recipeRouter);
