@@ -9,7 +9,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://food-hub-silk.vercel.app'
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
