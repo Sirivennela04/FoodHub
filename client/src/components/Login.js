@@ -11,7 +11,7 @@ function Login({ onLogin }) {
     e.preventDefault();
     try {
       console.log('Attempting login for:', username);
-      const response = await fetch('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/auth/login', {
+      const response = await fetch('https://food-hub-server-beta.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

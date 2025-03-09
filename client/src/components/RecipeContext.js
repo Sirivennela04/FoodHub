@@ -32,7 +32,7 @@ export const RecipeProvider = ({ children }) => {
             setLoading(true);
             setError(null);
             console.log('Fetching recipes...');
-            const response = await fetch('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes');
+            const response = await fetch('https://food-hub-server-beta.vercel.app/recipes');
             const data = await response.json();
             console.log('Recipes fetched:', data);
             setRecipes(data);
@@ -84,7 +84,7 @@ export const RecipeProvider = ({ children }) => {
             console.log('Making API request to create recipe with data:', recipeData);
             console.log('Using authorization token:', token);
 
-            const response = await fetch('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes', {
+            const response = await fetch('https://food-hub-server-beta.vercel.app/recipes', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ function SavedRecipes() {
     const fetchSavedRecipes = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/saved', {
+        const response = await fetch('https://food-hub-server-beta.vercel.app/recipes/saved', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -44,7 +44,7 @@ function SavedRecipes() {
 
   const handleUnsave = async (recipeId) => {
     try {
-      const response = await fetch(`https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/save/${recipeId}`, {
+      const response = await fetch(`https://food-hub-server-beta.vercel.app/recipes/save/${recipeId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

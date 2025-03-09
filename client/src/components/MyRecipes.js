@@ -13,7 +13,7 @@ function MyRecipes() {
     const fetchUserRecipes = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/userRecipes/${username}`, {
+        const response = await fetch(`https://food-hub-server-beta.vercel.app/recipes/userRecipes/${username}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -42,7 +42,7 @@ function MyRecipes() {
     if (window.confirm('Are you sure you want to delete this recipe?')) {
         try {
             console.log('Attempting to delete recipe with ID:', recipeId);
-            const response = await fetch(`https://food-hub-server-git-main-sirivennelas-projects-9dbaf9e3.vercel.app/recipes/${recipeId}`, {
+            const response = await fetch(`https://food-hub-server-beta.vercel.app/recipes/${recipeId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
