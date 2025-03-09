@@ -56,7 +56,7 @@ function RecipeList() {
       {filteredRecipes.length === 0 ? (
         <div className="text-center mt-5">
           <p>No recipes found. Be the first to share a recipe!</p>
-          <Link to="/add-recipe" className="btn btn-primary">Share a Recipe</Link>
+          <Link to="https://food-hub-silk.vercel.app/add-recipe" className="btn btn-primary">Share a Recipe</Link>
         </div>
       ) : (
         <div className="row">

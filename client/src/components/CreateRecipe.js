@@ -27,7 +27,7 @@ function CreateRecipe() {
     try {
       const token = localStorage.getItem('token');
       if (!token) {
-        navigate('/login');
+        navigate('https://food-hub-silk.vercel.app/login');
         return;
       }
 
@@ -44,7 +44,7 @@ function CreateRecipe() {
       );
 
       if (response.status === 201) {
-        navigate('/');
+        navigate('https://food-hub-silk.vercel.app/');
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create recipe');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -94,6 +94,9 @@ function Login({ onLogin }) {
           </div>
         </div>
       </div>
+      <p className="text-center mt-3">
+        Don't have an account? <Link to="https://food-hub-silk.vercel.app/signup">Sign Up</Link>
+      </p>
     </div>
   );
 }

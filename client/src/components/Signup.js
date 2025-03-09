@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Signup() {
   const [username, setUsername] = useState('');
@@ -27,7 +27,7 @@ function Signup() {
       }
 
       console.log('Registration successful:', data.message);
-      navigate('/login');
+      navigate('https://food-hub-silk.vercel.app/login');
     } catch (err) {
       console.error('Registration error:', err);
       setError(err.message || 'An error occurred during registration');
@@ -69,6 +69,9 @@ function Signup() {
           </div>
         </div>
       </div>
+      <p className="text-center mt-3">
+        Already have an account? <Link to="https://food-hub-silk.vercel.app/login">Login</Link>
+      </p>
     </div>
   );
 }

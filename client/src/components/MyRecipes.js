@@ -73,7 +73,7 @@ function MyRecipes() {
   if (!username || !token) {
     return (
       <div className="alert alert-warning">
-        Please <Link to="/login">log in</Link> to see your recipes.
+        Please <Link to="https://food-hub-silk.vercel.app/login">log in</Link> to see your recipes.
       </div>
     );
   }
@@ -91,7 +91,7 @@ function MyRecipes() {
       <h2 className="mb-4">My Recipes</h2>
       {recipes.length === 0 ? (
         <div className="alert alert-info">
-          You haven't added any recipes yet. <Link to="/add-recipe">Add your first recipe!</Link>
+          You haven't added any recipes yet. <Link to="https://food-hub-silk.vercel.app/add-recipe">Add your first recipe!</Link>
         </div>
       ) : (
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

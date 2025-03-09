@@ -100,7 +100,7 @@ function RecipeDetail() {
       <div className="alert alert-danger">
         Error: {error}
         <br />
-        <Link to="/recipes" className="btn btn-primary mt-3">
+        <Link to="https://food-hub-silk.vercel.app/recipes" className="btn btn-primary mt-3">
           Back to Recipes
         </Link>
       </div>
@@ -112,7 +112,7 @@ function RecipeDetail() {
       <div className="alert alert-warning">
         Recipe not found
         <br />
-        <Link to="/recipes" className="btn btn-primary mt-3">
+        <Link to="https://food-hub-silk.vercel.app/recipes" className="btn btn-primary mt-3">
           Back to Recipes
         </Link>
       </div>
@@ -200,7 +200,7 @@ function RecipeDetail() {
       {/* Navigation */}
       <div className="row">
         <div className="col-12 text-center">
-          <Link to="/recipes" className="btn btn-secondary">
+          <Link to="https://food-hub-silk.vercel.app/recipes" className="btn btn-secondary">
             Back to Recipes
           </Link>
         </div>

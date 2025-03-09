@@ -17,12 +17,12 @@ export const RecipeProvider = ({ children }) => {
                 if (payload.id && !payload.username) {
                     console.log('Found old token format, clearing localStorage...');
                     localStorage.clear();
-                    navigate('/login');
+                    navigate('https://food-hub-silk.vercel.app/login');
                 }
             } catch (err) {
                 console.error('Error checking token:', err);
                 localStorage.clear();
-                navigate('/login');
+                navigate('https://food-hub-silk.vercel.app/login');
             }
         }
     }, [navigate]);
@@ -57,7 +57,7 @@ export const RecipeProvider = ({ children }) => {
             if (!token || !username) {
                 console.log('Missing auth data, redirecting to login...');
                 localStorage.clear();
-                navigate('/login');
+                navigate('https://food-hub-silk.vercel.app/login');
                 return null;
             }
 
@@ -66,13 +66,13 @@ export const RecipeProvider = ({ children }) => {
                 if (!payload.username) {
                     console.log('Invalid token format, redirecting to login...');
                     localStorage.clear();
-                    navigate('/login');
+                    navigate('https://food-hub-silk.vercel.app/login');
                     return null;
                 }
             } catch (err) {
                 console.error('Error verifying token:', err);
                 localStorage.clear();
-                navigate('/login');
+                navigate('https://food-hub-silk.vercel.app/login');
                 return null;
             }
 
@@ -101,7 +101,7 @@ export const RecipeProvider = ({ children }) => {
                 if (response.status === 401 || response.status === 403) {
                     console.log('Authentication failed, redirecting to login...');
                     localStorage.clear();
-                    navigate('/login');
+                    navigate('https://food-hub-silk.vercel.app/login');
                     return null;
                 }
                 throw new Error(`HTTP error! status: ${response.status}, message: ${responseText}`);
