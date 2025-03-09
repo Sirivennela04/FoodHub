@@ -9,23 +9,28 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL || "http://localhost:3000",
   credentials: true
 }));
+
+app.use(express.json());
 
 app.use("/auth", userRouter);
 app.use("/recipes", recipeRouter);
 
+const PORT = process.env.PORT || 3001;
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB successfully");
-    app.listen(3001, () => {
-      console.log("Server started on port 3001");
+    app.listen(PORT, () => {
+      console.log(`Server started on port ${PORT}`);
     });
   })
   .catch((err) => {
     console.error("MongoDB connection error:", err);
     process.exit(1);
   });
+
+export default app;
