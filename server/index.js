@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+// Updated CORS configuration for Vercel deployment
 
 app.use(express.json());
 
