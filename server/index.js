@@ -12,18 +12,26 @@ const app = express();
 
 app.use(express.json());
 
+// Enhanced CORS configuration
 app.use(cors({
-  origin: "https://food-hub-silk.vercel.app",
+  origin: ["https://food-hub-silk.vercel.app", "http://localhost:3000"],
   credentials: true,
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 200
 }));
 
+// Additional CORS headers middleware
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://food-hub-silk.vercel.app");
-  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  res.header("Access-Control-Allow-Origin", req.headers.origin || "https://food-hub-silk.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
   res.header("Access-Control-Allow-Credentials", "true");
+  
+  // Handle preflight requests
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
   next();
 });
 
